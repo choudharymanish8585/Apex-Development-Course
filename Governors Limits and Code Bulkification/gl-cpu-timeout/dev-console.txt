@@ -1,0 +1,6 @@
+// faulty code to test cpu timeout exception
+
+// this loop will keep on executing forever
+while(1==1){
+    System.debug('Executing');
+}

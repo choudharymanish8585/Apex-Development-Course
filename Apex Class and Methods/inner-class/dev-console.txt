@@ -1,0 +1,13 @@
+Company sfdcfacts = new Company();
+sfdcfacts.companyName = 'SFDCFacts Academy';
+sfdcfacts.ceo = 'Manish Choudhari';
+sfdcfacts.employeeCount = 6;
+sfdcfacts.revenue = 1000000;
+
+
+sfdcfacts.addNewCustomer('CLR Infotech', 'clrinfotech.com', 'clrinfotech@gmail.com', 7778889990L);
+sfdcfacts.addNewCustomer('Forcepanda', 'forcepanda.com', 'forcepanda@gmail.com', 7778889990L);
+sfdcfacts.addNewCustomer('Udemy', 'udemy.com', 'udemy@gmail.com', 6668889990L);
+
+
+sfdcfacts.getAllCustomers();

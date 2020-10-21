@@ -1,0 +1,5 @@
+// Retrieve all books and assign to a List collection
+List<SObject> books = [SELECT Name, Price__c FROM Book__c];
+for(SObject book : books){
+    System.debug('Book Name: '+String.valueOf(book.get('Name'))+' Book Price: '+(Decimal)book.get('Price__c'));
+}

@@ -1,0 +1,26 @@
+// get count of account
+SELECT COUNT() FROM Account
+
+// get count of ids in Account
+SELECT COUNT(Id) FROM Account
+
+// get count of distinct names in Account
+SELECT COUNT_DISTINCT(Name) FROM Account
+
+// multiple functions
+SELECT COUNT_DISTINCT(Name), COUNT(Id) FROM Account
+
+// Sum of amount in Opportunity
+SELECT SUM(Amount) FROM Opportunity
+
+// Max of amount in Opportunity
+SELECT MAX(Amount) FROM Opportunity
+
+// Min of amount in Opportunity
+SELECT MIN(Amount) FROM Opportunity
+
+// Avg of amount in Opportunity
+SELECT AVG(Amount) FROM Opportunity
+
+// Multiple functions
+SELECT SUM(Amount), MAX(Amount), MIN(Amount), AVG(Amount) FROM Opportunity

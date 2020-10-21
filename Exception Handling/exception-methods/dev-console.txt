@@ -1,0 +1,19 @@
+System.debug('Before Exception');
+try{
+    // Math Exception
+    Double result = 10/0;
+    System.debug('Result: '+result);
+
+    // DML Exception
+    // Account accRec = new Account();
+    // insert accRec;
+    System.debug('Empty try block ');
+} catch(Exception e){
+    system.debug('Cause '+e.getCause());
+    system.debug('Message '+e.getMessage());
+    system.debug('Line Number '+e.getLineNumber());
+    system.debug('Stack Trace '+e.getStackTraceString ());
+} finally {
+    System.debug('finally called ');
+}
+System.debug('After Exception');

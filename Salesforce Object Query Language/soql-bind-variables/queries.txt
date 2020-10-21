@@ -1,0 +1,10 @@
+List<String> accountNames = new List<String>();
+accountNames.add('Sample SObject Account');
+accountNames.add('New Line Cinema');
+accountNames.add('SFDCFacts');
+accountNames.add('Burlington Textiles Corp of America');
+
+List<Account> accounts = [SELECT Id, Name, Phone, Rating FROM Account
+                         	WHERE Name IN :accountNames];
+System.debug('Accounts: '+accounts);
+System.debug('Accounts Size: '+accounts.size());
