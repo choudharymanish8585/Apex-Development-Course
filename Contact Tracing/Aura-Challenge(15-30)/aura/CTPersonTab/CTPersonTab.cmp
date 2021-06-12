@@ -1,0 +1,79 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-10-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   06-10-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<aura:component controller="CTPersonTabController" implements="force:appHostable">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="userInfo" type="Object" />
+    <aura:attribute name="userFound" type="Boolean" default="false" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="main-container">
+        <div class="search-panel">
+            <lightning:input type="text" name="recordId" label="User Id" variant="label-hidden" value="{!v.recordId}" placeholder="Type user id here.." />
+            <lightning:button label="Search User" title="Search User" onclick="{! c.userSearchHandler }" variant="neutral" class="slds-m-left_medium" />
+        </div>
+
+        <aura:if isTrue="{!v.userFound}">
+            <div class="card-container slds-align_absolute-center">
+                <div class="header-panel">
+                    <div class="{! v.userInfo.status + ' health-header'}">
+                        {!v.userInfo.name}, your health status is {!v.userInfo.status}
+                    </div>
+                    <div class="subheader-panel">
+                        <div class="subheader-row">
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Phone
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.userInfo.phone}
+                                </div>
+                            </div>
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Token
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.userInfo.token}
+                                </div>
+                            </div>
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Status Updated On
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.userInfo.statusUpdateOn}
+                                </div>
+                            </div>
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Contacts in Last 30 Days
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.userInfo.contactsCount}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="slds-text-heading_medium slds-p-left_xx-small">
+                        Recent Contacts
+                    </div>
+                    <div class="contacts">
+                        <lightning:datatable keyField="id" data="{! v.userInfo.contacts }" columns="{! v.columns }" hideCheckboxColumn="true" />
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>
