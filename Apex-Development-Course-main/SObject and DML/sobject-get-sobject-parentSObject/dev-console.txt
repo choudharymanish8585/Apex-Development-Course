@@ -1,0 +1,33 @@
+// Retrieve all books and assign to a List collection
+List<SObject> books = [SELECT Name, Price__c, Author__r.Name FROM Book__c];
+for(SObject book : books){
+    System.debug('Book Name: '+String.valueOf(book.get('Name'))+' Book Price: '+(Decimal)book.get('Price__c')+ ' Book Author: '+ (String)book.getSObject('Author__r').get('Name'));
+}
+
+// child to parent WITH DYNAMIC SOQL
+
+LIST<sObject> AccountList= [SELECT ID, Name, Owner.Username FROM Account];
+for(SObject A: AccountList){
+ 	// system.debug((String)A.get('Name')); 
+    system.debug(String.valueOf(A.get('Name')) + (string)A.getSObject('Owner').get('Username'));
+
+
+// parent to child with dynamic soql:
+
+/*
+List<Account> AL= [SELECT ID, Name, (SELECT ID, LastName FROM Contacts) FROM Account];
+for(Account A: AL){
+    system.debug('Account Name ' + A.Name);
+        for(Contact C: A.Contacts){
+               system.debug('Contact\'s last name is ' + C.LastName);
+        }
+}
+*/
+LIST<SObject> AL = [SELECT ID, Name, (SELECT ID, LastName FROM Contacts) FROM Account];
+for(SObject A: AL){
+    system.debug('Account Name ' + (String)A.get('Name'));
+        for(SObject C: A.getSObjects('Contacts')){
+               system.debug((String)C.get('LastName'));
+        }
+
+}

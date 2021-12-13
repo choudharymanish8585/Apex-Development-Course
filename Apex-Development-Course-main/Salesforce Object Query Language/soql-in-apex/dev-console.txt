@@ -1,0 +1,19 @@
+// Retrieve all accounts and assign to a List collection
+List<Account> accounts = [SELECT Name, Phone FROM Account];
+
+// iterate over all accounts and print account information
+for(Account account : accounts){
+    System.debug('Account Name: '+account.Name+' Account Phone: '+account.Phone);
+}
+
+// Get SOQL results in a Map collection
+Map<Id, Account> accountsMap = new Map<Id, Account>([SELECT Name, Phone FROM Account]);
+for(Account account : accountsMap.values()){
+    System.debug('Account Name: '+account.Name+' Account Phone: '+account.Phone);
+}
+
+// Retrieve all books and assign to a List collection
+List<Book__c> books = [SELECT Name, Price__c FROM Book__c];
+for(Book__c book : books){
+    System.debug('Book Name: '+book.Name+' Book Price: '+book.Price__c);
+}

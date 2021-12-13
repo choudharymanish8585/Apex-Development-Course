@@ -1,0 +1,79 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-10-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   06-10-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<aura:component controller="CTLocationTabController" implements="force:appHostable">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="locationInfo" type="Object" />
+    <aura:attribute name="locationFound" type="Boolean" default="false" />
+    <aura:attribute name="columns" type="List" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="main-container">
+        <div class="search-panel">
+            <lightning:input type="text" name="recordId" label="Location Id" variant="label-hidden" value="{!v.recordId}" placeholder="Type location id here.." />
+            <lightning:button label="Search Location" title="Search Location" onclick="{! c.locationSearchHandler }" variant="neutral" class="slds-m-left_medium" />
+        </div>
+
+        <aura:if isTrue="{!v.locationFound}">
+            <div class="card-container slds-align_absolute-center">
+                <div class="header-panel">
+                    <div class="{! v.locationInfo.status + ' health-header'}">
+                        {!v.locationInfo.name}, is in {!v.locationInfo.status} status
+                    </div>
+                    <div class="subheader-panel">
+                        <div class="subheader-row">
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Pincode
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.locationInfo.pincode}
+                                </div>
+                            </div>
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Red Score
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.locationInfo.redScore}
+                                </div>
+                            </div>
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Status Updated On
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.locationInfo.statusUpdateOn}
+                                </div>
+                            </div>
+                            <div class="row-item">
+                                <div class="row-item-label slds-text-title">
+                                    Vistors in Last 30 Days
+                                </div>
+                                <div class="row-item-value">
+                                    {!v.locationInfo.contactsCount}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="slds-text-heading_medium slds-p-left_xx-small">
+                        Recent Visitors
+                    </div>
+                    <div class="contacts">
+                        <lightning:datatable keyField="id" data="{! v.locationInfo.contacts }" columns="{! v.columns }" hideCheckboxColumn="true" />
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

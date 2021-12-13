@@ -1,0 +1,5 @@
+// OR Keyword
+SELECT Name, Status, Company, Email FROM Lead WHERE Status='Closed - Converted' OR Status='Closed - Not Converted'
+
+// OR and AND Keyword
+SELECT Name, Status, LeadSource, Company, Email FROM Lead WHERE (Status='Closed - Converted' OR Status='Closed - Not Converted') AND LeadSource='Web'

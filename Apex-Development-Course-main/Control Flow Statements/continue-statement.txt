@@ -1,0 +1,13 @@
+//List of all days
+List<String> days = new List<String>{'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'};
+
+// get the list size
+Integer listSize = days.size();
+
+//iterate over the list
+for(Integer i=0; i < listSize; i++){
+    if(days.get(i) == 'Tuesday'){
+        continue;
+    }
+    System.debug('It is '+days.get(i)+'. Eat Chicken.');
+}

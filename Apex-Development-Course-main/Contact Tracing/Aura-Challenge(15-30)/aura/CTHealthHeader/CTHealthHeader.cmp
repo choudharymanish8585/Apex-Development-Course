@@ -1,0 +1,77 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-10-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   06-10-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<aura:component controller="CTHealthHeaderController">
+    <aura:attribute name="scope" type="String" default="person" />
+    <aura:attribute name="headerTitle" type="String" default="Person View" />
+
+    <aura:attribute name="count" type="Object" default="" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:method name="fetchCount" action="{!c.doInit}" description="Fetch count for person view or location view"></aura:method>
+
+    <div class="slds-page-header slds-page-header_record-home">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-opportunity">
+                            <lightning:icon iconName="standard:queue" alternativeText="Contact Tracing" title="Contact Tracing" />
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span>Contact Tracing</span>
+                                    <span class="slds-page-header__title slds-truncate" title="{!v.headerTitle}">{!v.headerTitle}</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-page-header__col-actions">
+                <div class="slds-page-header__controls">
+                    <div class="slds-page-header__control">
+                        <ul class="slds-button-group-list">
+                            <li>
+                                <button class="slds-button slds-button_neutral" onclick="{!c.createRecord}">Add New</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-page-header__row slds-page-header__row_gutters">
+            <div class="slds-page-header__col-details">
+                <ul class="slds-page-header__detail-row">
+                    <li class="slds-page-header__detail-block">
+                        <div class="header-item green" title="Green">Green</div>
+                        <div class="header-item green" title="">{!v.count.Green}</div>
+                    </li>
+                    <li class="slds-page-header__detail-block">
+                        <div class="header-item yellow" title="Yellow">Yellow</div>
+                        <div class="header-item yellow" title="">{!v.count.Yellow}</div>
+                    </li>
+                    <li class="slds-page-header__detail-block">
+                        <div class="header-item orange" title="Orange">Orange</div>
+                        <div class="header-item orange" title="">{!v.count.Orange}</div>
+                    </li>
+                    <li class="slds-page-header__detail-block">
+                        <div class="header-item red" title="Red">Red</div>
+                        <div class="header-item red" title="">{!v.count.Red}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aura:component>

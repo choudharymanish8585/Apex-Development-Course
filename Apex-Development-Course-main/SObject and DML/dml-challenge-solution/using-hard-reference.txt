@@ -1,0 +1,44 @@
+/**
+ * DML CHALLENGE
+ * Create a new Account with the name “WingNut Films” and Rating “Warm”
+ * Create a new Opportunity “Lord Of The Rings”  for this Account with below field values
+ *                Stage > Qualification
+ *                Closed Date > Today
+ * Update Account Name to “New Line Cinema”
+ * Update Opportunity Stage to “Closed-Won”
+ * Delete the opportunity
+ * Undelete the opportunity
+ **/
+
+// create new instance of account object
+Account accRec = new Account(Name='WingNut Films', Rating='Warm');
+// insert the account
+insert accRec;
+
+
+// create opportunity record
+Account account = [SELECT Id FROM Account WHERE Name='WingNut Films' LIMIT 1];
+Opportunity opp = new Opportunity(Name='Lord Of The Rings', StageName='Qualification ', CloseDate=Date.today());
+opp.AccountId = account.Id;
+insert opp;
+
+// retrieve wingnut films account
+Account account = [SELECT Id, Name FROM Account WHERE Name='WingNut Films' LIMIT 1];
+// update the name
+account.Name = 'New Line Cinema';
+// update the account
+update account;
+
+Opportunity opp = [SELECT Id, Name, StageName FROM Opportunity WHERE Name='Lord Of The Rings' LIMIT 1];
+opp.StageName = 'Closed Won';
+update opp;
+
+// get opportunity record to delete
+Opportunity opp = [SELECT Id, Name, StageName FROM Opportunity WHERE Name='Lord Of The Rings' LIMIT 1];
+// delete opportunity
+delete opp;
+
+// get opportunity record to undelete
+List<Opportunity> opps = [SELECT Id, Name, StageName FROM Opportunity WHERE isDeleted=true ALL ROWS];
+// undelete opportunity
+undelete opps;

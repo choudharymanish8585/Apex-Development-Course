@@ -1,0 +1,407 @@
+{
+	/**
+	* My custom code snippets for Salesforce which makes life of a developer easy :)
+	* @author - Manish Choudhari
+	*/
+
+	"Package Creator": {
+		"scope": "xml",
+		"prefix": "package",
+		"body":[
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<Package xmlns=\"http://soap.sforce.com/2006/04/metadata\">",
+			"\t${1: }",
+			"\t<version>${2:45.0}</version>",
+			"</Package>"
+		],
+		"description": "Create package.xml for ant deployment"
+	},
+
+	"Package-Object Creator": {
+		"scope": "xml",
+		"prefix": "package-object",
+		"body":[
+			"<types>",
+        	"\t<members>${1:ObjectApiName}</members>",
+        	"\t<name>CustomObject</name>",
+    		"</types>"
+		],
+		"description": "Add CustomObject in package.xml"
+	},
+
+	"Package-Class Creator": {
+		"scope": "xml",
+		"prefix": "package-class",
+		"body":[
+			"<types>",
+        	"\t<members>${1:ApexClassApiName}</members>",
+        	"\t<name>ApexClass</name>",
+    		"</types>"
+		],
+		"description": "Add ApexClass in package.xml"
+	},
+
+	"Package-Field Creator": {
+		"scope": "xml",
+		"prefix": "package-field",
+		"body":[
+			"<types>",
+        	"\t<members>${1:FieldApiName}</members>",
+        	"\t<name>CustomField</name>",
+    		"</types>"
+		],
+		"description": "Add CustomField in package.xml"
+	},
+
+	"Package-ListView Creator": {
+		"scope": "xml",
+		"prefix": "package-listview",
+		"body":[
+			"<types>",
+        	"\t<members>${1:ListViewApiName}</members>",
+        	"\t<name>ListView</name>",
+    		"</types>"
+		],
+		"description": "Add ListView in package.xml"
+	},
+
+	"Package-SharingCriteriaRule Creator": {
+		"scope": "xml",
+		"prefix": "package-sharing-criteria",
+		"body":[
+			"<types>",
+        	"\t<members>${1:SharingRuleApiName}</members>",
+        	"\t<name>SharingCriteriaRule</name>",
+    		"</types>"
+		],
+		"description": "Add SharingCriteriaRule in package.xml"
+	},
+
+	"Package-SharingOwnerRule Creator": {
+		"scope": "xml",
+		"prefix": "package-sharing-owner",
+		"body":[
+			"<types>",
+        	"\t<members>${1:SharingRuleApiName}</members>",
+        	"\t<name>SharingOwnerRule</name>",
+    		"</types>"
+		],
+		"description": "Add SharingOwnerRule in package.xml"
+	},
+
+	"Package-Profile Creator": {
+		"scope": "xml",
+		"prefix": "package-profile",
+		"body":[
+			"<types>",
+        	"\t<members>${1:ProfileApiName}</members>",
+        	"\t<name>Profile</name>",
+    		"</types>"
+		],
+		"description": "Add Profile in package.xml"
+	},
+
+	"Package-Aura Bundle Creator": {
+		"scope": "xml",
+		"prefix": "package-aura-bundle",
+		"body":[
+			"<types>",
+        	"\t<members>${1:AuraBundleApiName}</members>",
+        	"\t<name>AuraDefinitionBundle</name>",
+    		"</types>"
+		],
+		"description": "Add AuraDefinitionBundle in package.xml"
+	},
+
+	"Package-PermissionSet Creator": {
+		"scope": "xml",
+		"prefix": "package-permission-set",
+		"body":[
+			"<types>",
+        	"\t<members>${1:PermissionSetApiName}</members>",
+        	"\t<name>PermissionSet</name>",
+    		"</types>"
+		],
+		"description": "Add PermissionSet in package.xml"
+	},
+
+	"Package-CustomTab Creator": {
+		"scope": "xml",
+		"prefix": "package-tab",
+		"body":[
+			"<types>",
+        	"\t<members>${1:CustomTabApiName}</members>",
+        	"\t<name>CustomTab</name>",
+    		"</types>"
+		],
+		"description": "Add CustomTab in package.xml"
+	},
+
+	"Package-CustomApplication Creator": {
+		"scope": "xml",
+		"prefix": "package-application",
+		"body":[
+			"<types>",
+        	"\t<members>${1:CustomApplicationApiName}</members>",
+        	"\t<name>CustomApplication</name>",
+    		"</types>"
+		],
+		"description": "Add CustomApplication in package.xml"
+	},
+
+	"Package-RecordType Creator": {
+		"scope": "xml",
+		"prefix": "package-record-type",
+		"body":[
+			"<types>",
+        	"\t<members>${1:RecordTypeApiName}</members>",
+        	"\t<name>RecordType</name>",
+    		"</types>"
+		],
+		"description": "Add RecordType in package.xml"
+	},
+
+	"Package-Visualforce Creator": {
+		"scope": "xml",
+		"prefix": "package-page",
+		"body":[
+			"<types>",
+        	"\t<members>${1:VisualforceApiName}</members>",
+        	"\t<name>ApexPage</name>",
+    		"</types>"
+		],
+		"description": "Add ApexPage in package.xml"
+	},
+
+	"Aura-Attribute Creator": {
+		"scope": "html,component",
+		"prefix": "aura-attribute",
+		"body":[
+			"<aura:attribute name=\"${1:attributeName}\" type=\"${2:attributeType}\" />",
+		],
+		"description": "Add Aura:Attribute in Aura Bundle"
+	},
+
+	"Aura-Tabset-Horizontal Creator": {
+		"scope": "html,component",
+		"prefix": "aura-tabset",
+		"body":[
+			"<lightning:tabset>",
+			"\t<lightning:tab label=\"${1:tabLabel}\">",
+			"\t\t${2:<!-- Awesome content here-->}",
+			"\t</lightning:tab>",
+			"</lightning:tabset>",
+		],
+		"description": "Add lightning:tabSet in Aura Bundle with horizontal alignment"
+	},
+
+	"Aura-Tabset-Vertical Creator": {
+		"scope": "html,component",
+		"prefix": "aura-tabset-vertical",
+		"body":[
+			"<lightning:tabset variant=\"vertical\">",
+			"\t<lightning:tab label=\"${1:tabLabel}\">",
+			"\t\t${2:<!-- Awesome content here-->}",
+			"\t</lightning:tab>",
+			"</lightning:tabset>",
+		],
+		"description": "Add lightning:tabSet in Aura Bundle with vertical alignment"
+	},
+
+	"Aura-Tab": {
+		"scope": "html,component",
+		"prefix": "aura-tab",
+		"body":[
+			"<lightning:tab label=\"${1:tabLabel}\">",
+			"\t<!-- Tab Body Goes Here-->",
+			"</lightning:tab>",
+		],
+		"description": "Add lightning:tab in Aura Bundle" 
+	},
+
+	"Aura-Card Creator": {
+		"scope": "html,component",
+		"prefix": "aura-card",
+		"body":[
+			"<lightning:card title=\"${1:cardTitle}\">",
+			"\t<aura:set attribute=\"actions\">",
+            "\t\t<lightning:button label=\"${2:cardAction}\"/>",
+        	"\t</aura:set>",
+            "\t<!--Define Card Body here-->",
+    		"</lightning:card>",
+		],
+		"description": "Add lightning:card in Aura Bundle"
+	},
+
+	"Aura-Button Creator": {
+		"scope": "html,component",
+		"prefix": "aura-button",
+		"body":[
+        	"<lightning:button label=\"${1:cardAction}\" variant=\"Neutral\" title=\"Neutral action\" onclick=\"{! c.handleClick }\"/>",
+		],
+		"description": "Add action within lightning:card in Aura Bundle"
+	},
+
+	"Aura-Init Handler": {
+		"scope": "html,component",
+		"prefix": "aura-init-handler",
+		"body":[
+        	"<aura:handler name=\"init\" value=\"{!this}\" action=\"${1:{!c.doInit}}\" />",
+		],
+		"description": "Add init handler in Aura Bundle"
+	},
+
+	"Aura-Controller Method": {
+		"scope": "javascript",
+		"prefix": "aura-controller-method",
+		"body":[
+        	"${1:myAction} : function(component, event, helper) {",
+				"\t//Method defination goes here",
+			"},",
+		],
+		"description": "Add method controller or helper or renderer in Aura Bundle"
+	},
+
+	"Aura Action Creator": {
+		"scope": "javascript",
+		"prefix": "aura-action",
+		"body":[
+        	"var action = component.get(\"c.${1:actionName}\");",
+			"action.setParams({",
+				"\t\"${2:paramName}\" : ${3:paramValue},", 
+			"});",
+			"action.setCallback(this,function(response) {",
+				"\tvar state = response.getState();",
+				"\tif (state === \"SUCCESS\") {",
+					"\t\t// Handle response here - response.getReturnValue();",
+				"\t}",
+			"});",
+			"$$A.enqueueAction(action);"
+		],
+		"description": "Add server side call action in helper"
+	},
+
+	"Aura Tile Creator": {
+		"scope": "html,component",
+		"prefix": "aura-tile",
+		"body":[
+        	"<lightning:tile label=\"${1:tileLabel}\" href=\"${2:link}\" class=\"${3:slds-tile_board}\">",
+                "\t<!--Tile content goes here -->",
+            "</lightning:tile>"
+		],
+		"description": "Add lightning tile in aura bundele"
+	},
+
+	"Aura Badge Creator": {
+		"scope": "html,component",
+		"prefix": "aura-badge",
+		"body":[
+        	"<lightning:badge label=\"${1:badgeLabel}\" class=\"${2:className}\"/>"
+		],
+		"description": "Add lightning badge in aura bundele"
+	},
+
+	"Aura Iteration Creator": {
+		"scope": "html,component",
+		"prefix": "aura-iteration",
+		"body":[
+			"<aura:iteration items=\"${1:iteratorName}\" var=\"${2:item}\">",
+				"\t<!--Process each element here -->",
+    		"</aura:iteration>"
+		],
+		"description": "Add aura iteration in helpaura bundeleer"
+	},
+
+	"Aura Layout Creator": {
+		"scope": "html,component",
+		"prefix": "aura-layout",
+		"body":[
+			"<lightning:layout multipleRows=\"true\">",
+				"\t<!--Layout content goes here -->",
+    		"</lightning:layout>"
+		],
+		"description": "Add lightning layout in aura bundle"
+	},
+
+	"Aura Layout-item Creator": {
+		"scope": "html,component",
+		"prefix": "aura-layout-item",
+		"body":[
+			"<lightning:layoutItem size=\"${1:size}\" padding=\"${2:around-small}\">",
+				"\t<!--Layout Item content goes here -->",
+    		"</lightning:layoutItem>"
+		],
+		"description": "Add lightning layout in aura bundle"
+	},
+
+	"Aura set Creator": {
+		"scope": "html,component",
+		"prefix": "aura-set",
+		"body":[
+			"<aura:set attribute=\"${1:attributeName}\">",
+            "\t<!--Attribute content goes here -->",
+        	"</aura:set>"
+		],
+		"description": "Add aura:set in aura bundle"
+	},
+
+	"Aura If Creator": {
+		"scope": "html,component",
+		"prefix": "aura-if",
+		"body":[
+			"<aura:if isTrue=\"{!v.${1:expression}}\">",
+			"\t<!--Some content here -->",
+			"\t<aura:set attribute=\"else\">",
+			"\t\t<!--True content goes here -->",
+			"\t</aura:set>",
+			"</aura:if>"
+		],
+		"description": "Add aura:if in aura bundle"
+	},
+
+	"Aura Input Creator": {
+		"scope": "html,component",
+		"prefix": "aura-input",
+		"body":[
+			"<lightning:input type=\"${1:type}\" name=\"${2:name}\" label=\"${3:label}\" />"
+		],
+		"description": "Add lightning input in aura bundle"
+	},
+
+	"Aura File Creator": {
+		"scope": "html,component",
+		"prefix": "aura-file",
+		"body":[
+			"<lightning:input type=\"file\" multiple=\"${1:true}\" name=\"${2:name}\" label=\"${3:label}\" required=\"${4:true}\" accept=\"${5:image/png, .zip}\"/>"
+		],
+		"description": "Add lightning input in aura bundle"
+	},
+
+	"Aura Slider Creator": {
+		"scope": "html,component",
+		"prefix": "aura-slider",
+		"body":[
+			"<lightning:slider label=\"${1:label}\" value=\"${2:value}\" step=\"${3:step}\" min=\"${4:min}\" max=\"${5:max}\" onchange=\"${6:{!c.handleSliderChange}}\"/>"
+		],
+		"description": "Add lightning slider in aura bundle"
+	},
+
+	"Aura Formatted Text Creator": {
+		"scope": "html,component",
+		"prefix": "aura-formatted-text",
+		"body":[
+			"<lightning:formattedText value=\"${1:textValue}\" />"
+		],
+		"description": "Add lightning formatte text in aura bundle"
+	},
+
+	"Aura Combo Box Creator": {
+		"scope": "html,component",
+		"prefix": "aura-combobox",
+		"body":[
+			"<lightning:combobox name=\"${1:name}\" label=\"${2:label}\" value=\"${3:selectValue}\" placeholder=\"${4:Select Value}\" options=\"${5:options}\" onchange=\"${6:handleChange}\"/>"
+		],
+		"description": "Add combo box in aura bundle"
+	},
+	
+}
