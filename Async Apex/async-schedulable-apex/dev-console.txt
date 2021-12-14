@@ -4,3 +4,30 @@ String cronExp = '00 30 3 ? * MON';
 
 String jobId = System.schedule('Sample Job', cronExp, leadSchedulableInstance);
 system.debug('Job id:'+ jobId);
+
+Seconds, minutes, hours, day of month, month,day of week, optional year:
+0-59, 0-59, 0-23, 1-31, 1-12, MON-FRI, 1970-2099
+DAY OF MONTH
+, - * ? / L W
+, | Give multiple values = 1,2 
+- | Give range of values = 1-5
+* | All possible values
+? | Do not specify any value
+/ | Specifies increments
+L | Last possible value
+W | Closest Weekday
+
+MONTH
+, - * /
+
+DAY OF WEEK
+, - * ? / l #
+
+OPTIONAL YEAR (ONLY TAKES 1970-2099)
+, - * /
+
+
+To track a schedulable job: whether it is queuable apex or batch or schedulable we can use 'CronJobDetail' and 'CronTrigger' object. 
+
+
+SELECT ID, Name, JobType FROM CronJobDetail
