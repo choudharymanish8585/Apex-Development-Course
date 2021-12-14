@@ -1,0 +1,41 @@
+/*
+Print first 20 fibonacci numbers
+0, 1, 1, 2, 3, 5, 8 …
+0 & 1 - first 2 numbers
+1 > 0+1
+2 > 1+1
+3 > 2+1
+5 > 3+2
+*/
+
+Integer current;
+Integer previous = 1;
+Integer beforePrevious = 0;
+
+// current = previous + beforePrevious
+// current = 1 + 0 = 1
+
+// print very first number
+System.debug(beforePrevious);
+// print 2nd number
+System.debug(previous);
+
+// print next 18 numbers
+Integer i = 0;
+
+while(i<18){//run loop 18 times
+	//print fibonacci numbers here
+
+    //calculate current number
+    current = previous + beforePrevious;
+    //print current value
+    System.debug(current);
+
+    //update beforePrevious with previous
+    beforePrevious = previous;
+    //update previous with current
+    previous = current;
+
+    //increment i's value
+    i++;
+}

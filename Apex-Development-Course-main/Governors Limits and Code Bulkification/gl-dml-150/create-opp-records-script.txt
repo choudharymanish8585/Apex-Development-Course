@@ -1,0 +1,5 @@
+List<Opportunity> opps = new List<Opportunity>();
+for(Integer i=0; i<200; i++){
+    opps.add(new Opportunity(Name='Test Opp'+i, CloseDate=Date.today(), StageName='Qualification'));
+}
+insert opps;

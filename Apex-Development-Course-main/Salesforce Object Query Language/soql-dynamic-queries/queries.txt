@@ -1,0 +1,15 @@
+String accountClass = 'Class3';
+
+String queryString = 'SELECT Id, Name, Phone, Rating FROM Account';
+
+if(accountClass == 'Class1'){
+    queryString += ' WHERE Rating=\'Hot\' AND Type=\'Prospect\'';
+} else if(accountClass == 'Class2'){
+    queryString += ' WHERE Rating=\'Warm\' AND Type=\'Other\'';
+} else {
+    queryString += ' WHERE Rating=\'Hot\'';
+}
+
+List<Account> accounts = Database.query(queryString);
+System.debug('Accounts '+accounts);
+System.debug('Accounts size '+accounts.size());

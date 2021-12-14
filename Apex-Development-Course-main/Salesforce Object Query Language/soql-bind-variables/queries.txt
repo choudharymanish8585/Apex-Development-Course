@@ -1,0 +1,17 @@
+List<String> accountNames = new List<String>();
+accountNames.add('Sample SObject Account');
+accountNames.add('New Line Cinema');
+accountNames.add('SFDCFacts');
+accountNames.add('Burlington Textiles Corp of America');
+
+List<Account> accounts = [SELECT Id, Name, Phone, Rating FROM Account
+                         	WHERE Name IN :accountNames];
+System.debug('Accounts: '+accounts);
+System.debug('Accounts Size: '+accounts.size());
+
+
+BINDING VARIABLES IN SOQL:
+Bind expressions can be used as:
+. The filter literals in WHERE clauses
+. The value of the IN or NOT IN operator in WHERE clauses, allowing filtering on a dynamic set of values. Note that this is of particular use with a list of IDs or Strings, though it works with lists of any type. 
+. The numeric value in LIMIT and OFFSET clauses

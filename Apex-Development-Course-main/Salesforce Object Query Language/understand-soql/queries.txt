@@ -1,0 +1,1 @@
+SELECT Name, Company, Email, Status FROM Lead

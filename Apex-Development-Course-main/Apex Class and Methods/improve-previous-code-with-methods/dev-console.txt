@@ -1,0 +1,13 @@
+Friends pizzaNight = new Friends();
+
+// Calculate Ross's amount
+Integer rossHasToPay = pizzaNight.getBill(3);
+System.debug('Ross has to pay - '+rossHasToPay);
+
+// Calculate Chandler's amount
+Integer chandlerHasToPay = pizzaNight.getBill(1);
+System.debug('Chandler has to pay - '+chandlerHasToPay);
+
+// Calculate Joey's amount
+Integer joeyHasToPay = pizzaNight.getBill(4);
+System.debug('Joey has to pay - '+joeyHasToPay);

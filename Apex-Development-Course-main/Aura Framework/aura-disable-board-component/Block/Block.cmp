@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="open" type="Boolean" default="false" />
+
+    <!--Register the block click event-->
+    <aura:registerEvent name="onclick" type="c:BlockClickEvent" />
+    <!-- Block tile container-->
+    <div class="board-block slds-align_absolute-center slds-var-m-around_medium slds-var-p-around_medium" onclick="{!c.blockClickHandler}">
+        <aura:if isTrue="{!v.open}">
+            <div>{!v.label}</div>
+        </aura:if>
+    </div>
+</aura:component>

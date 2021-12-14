@@ -1,0 +1,4 @@
+Covid19 jaipur = new Covid19();
+
+System.debug('Recoverd in jaipur : '+jaipur.recoveredInArea);
+Covid19.printTreated();

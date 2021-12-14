@@ -1,0 +1,18 @@
+Covid19 jaipur = new Covid19();
+
+System.debug('Recoverd in jaipur : '+jaipur.recoveredInArea);
+Covid19.printTreated();
+//System.debug('Recoverd in country : '+Covid19.recoveredInCountry);
+
+jaipur.treatPatient();
+
+System.debug('Recoverd in jaipur : '+jaipur.recoveredInArea);
+Covid19.printTreated();
+//System.debug('Recoverd in country : '+Covid19.recoveredInCountry);
+
+Covid19 hyd = new Covid19();
+hyd.treatPatient();
+
+System.debug('Recoverd in hyd : '+hyd.recoveredInArea);
+Covid19.printTreated();
+//System.debug('Recoverd in country : '+Covid19.recoveredInCountry);

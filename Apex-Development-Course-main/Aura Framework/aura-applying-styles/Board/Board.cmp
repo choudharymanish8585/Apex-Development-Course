@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="words" type="List" access="private" />
+    <aura:attribute name="winWord" type="String" access="private" />
+    <aura:attribute name="clickCount" type="Integer" default="0" access="private" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- <aura:handler name="render" value="{!this}" action="{!c.doRender}" /> -->
+
+    <div class="board">
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading_medium">WORD : <span class="win-word">{!v.winWord}</span></div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <div class="slds-text-heading_medium">Moves Left : {! (3 - v.clickCount)}</div>
+            </lightning:layoutItem>
+        </lightning:layout>
+
+        <lightning:layout multipleRows="true">
+            <!--Layout content goes here -->
+            <lightning:layoutItem size="4" padding="around-small"> 1 </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small"> 2 </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small"> 3 </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small"> 4 </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small"> 5 </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small"> 6 </lightning:layoutItem>
+            <lightning:layoutItem size="4" padding="around-small"> 7 </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

@@ -1,0 +1,19 @@
+// insert a new account record first, which we will update later on
+Account acc = new Account(Name='SFDCFacts', Phone='9988998899');
+AccountController.insertAccount(acc);
+
+// Update an account with valid id
+Account acc = new Account(Id='0012x00000923pPAAQ', Name='SFDCFacts', Phone='9988998899', Rating='Warm');
+update acc;
+
+
+// update a list of account
+List<Account> accounts = [SELECT Id, Name, Phone FROM Account WHERE Name='SFDCFacts Academy' AND Phone='9988998899'];
+for(Account acc :  accounts){
+    acc.Name = 'SFDCFacts Academy';
+    acc.Rating = 'Hot';
+}
+update accounts;
+
+// alternate way to update the records
+Database.update(accounts, true);

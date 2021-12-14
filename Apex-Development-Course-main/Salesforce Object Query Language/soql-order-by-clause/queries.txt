@@ -1,0 +1,17 @@
+// Sorting by Name
+SELECT Name, Status, LeadSource, Company, Email FROM Lead ORDER BY Name
+
+// Sorting by Name in descending order
+SELECT Name, Status, LeadSource, Company, Email FROM Lead ORDER BY Name DESC
+
+// Sorting by Company
+SELECT Name, Status, LeadSource, Company, Email FROM Lead ORDER BY Company
+
+//Sorting by CreatedDate
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead ORDER BY CreatedDate
+
+//Sorting by CreatedDate in descending order
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead ORDER BY CreatedDate DESC
+
+//Order by clause with Where clause
+SELECT Name, Status, Company, Email FROM Lead WHERE Status='Closed - Converted' ORDER BY Name

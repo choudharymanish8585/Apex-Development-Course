@@ -1,0 +1,10 @@
+LeadBatch leadBatchInstance = new LeadBatch();
+
+// calling with a batch size 50
+Database.executeBatch(leadBatchInstance, 50);
+
+// calling with a batch size 2000
+Database.executeBatch(leadBatchInstance, 2000);
+
+// calling with default batch size 200
+Database.executeBatch(leadBatchInstance);

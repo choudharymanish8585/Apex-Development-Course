@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <lightning:card title="Word Shuffle"> </lightning:card>
+</aura:component>

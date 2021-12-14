@@ -1,0 +1,12 @@
+System.debug('Before Exception');
+try{
+   throw new ProcessException('My custom exception');
+} catch(Exception e){
+    system.debug('Cause '+e.getCause());
+    system.debug('Message '+e.getMessage());
+    system.debug('Line Number '+e.getLineNumber());
+    system.debug('Stack Trace '+e.getStackTraceString ());
+} finally {
+    System.debug('finally called ');
+}
+System.debug('After Exception');

@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="greeting" type="String" default="Hello World" />
+    <aura:attribute name="numberTest" type="Integer" default="11" />
+    <aura:attribute name="booleanTest" type="Boolean" default="false" />
+	<lightning:card footer="Hello World Footer" title="{!v.greeting}">
+        <p class="slds-p-horizontal_small">
+            {!v.greeting} {!v.numberTest} {!v.booleanTest}
+            <lightning:button variant="destructive" label="{!v.greeting}" title="Destructive action" />
+        </p>
+    </lightning:card>
+</aura:component>

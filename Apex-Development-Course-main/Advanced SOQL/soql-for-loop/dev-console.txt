@@ -1,0 +1,3 @@
+for(AggregateResult result:  [SELECT StageName, MAX(Amount), MIN(Amount), AVG(Amount) FROM Opportunity GROUP BY StageName]){
+    System.debug('StageName: '+result.get('StageName')+' Max Amount: '+result.get('expr0')+' Min Amount: '+result.get('expr1')+' Avg Amount: '+result.get('expr2'));
+}

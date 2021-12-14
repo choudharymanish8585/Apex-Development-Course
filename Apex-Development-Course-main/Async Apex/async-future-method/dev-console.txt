@@ -1,0 +1,6 @@
+Map<Id, Lead> leadRecords = new Map<Id, Lead> ([SELECT Id FROM Lead]);
+
+// call first future method
+LeadAsynchronous.updateLeadRecords(leadRecords.keySet());
+// call 2nd future method
+LeadAsynchronous.createLeadRecords();

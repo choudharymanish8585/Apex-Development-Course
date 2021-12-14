@@ -1,0 +1,27 @@
+// Contact is a parent object of case
+// Account is a parent object of Contact
+
+
+// Retrieve Name, Department and Title of all contacts
+SELECT Name, Department, Title FROM Contact
+
+// Retrieve all Cases (CaseNumber, Subject) raised by the contact
+SELECT Name, Department, Title, (Select CaseNumber, Subject FROM Cases) FROM Contact
+
+// Get parent Account's Name, Rating for each Contact
+SELECT Name, Department, Title, (Select CaseNumber, Subject FROM Cases), Account.Name, Account.Rating FROM Contact
+
+// Make sure Account fields are the initial columns in results
+SELECT Account.Name, Account.Rating, Name, Department, Title, (Select CaseNumber, Subject FROM Cases) FROM Contact
+
+// Retrieve only those records where Account Rating is Hot
+SELECT Account.Name, Account.Rating, Name, Department, Title, (Select CaseNumber, Subject FROM Cases) FROM Contact WHERE Account.Rating='Hot'
+
+// Sort results by Contact Name
+SELECT Account.Name, Account.Rating, Name, Department, Title, (Select CaseNumber, Subject FROM Cases) FROM Contact WHERE Account.Rating='Hot' ORDER BY Name
+
+// Only retrieve open cases (use IsClosed Checkbox field value)
+SELECT Account.Name, Account.Rating, Name, Department, Title, (Select CaseNumber, Subject FROM Cases WHERE IsClosed=false) FROM Contact WHERE Account.Rating='Hot' ORDER BY Name
+
+// Add one more filter condition, Contact Department must be equals to 'Technology'
+SELECT Account.Name, Account.Rating, Name, Department, Title, (Select CaseNumber, Subject FROM Cases WHERE IsClosed=false) FROM Contact WHERE Account.Rating='Hot' AND Department='Technology' ORDER BY Name

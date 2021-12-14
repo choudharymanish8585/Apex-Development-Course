@@ -1,0 +1,12 @@
+/**
+ * HelloWorld class
+ * This is demo class to demonstrate how an apex class is defined and executed
+ * */
+public class HelloWorld {
+    String greeting = 'Hello World';
+
+    public void printGreeting() {
+        System.debug(greeting);
+    }
+
+}

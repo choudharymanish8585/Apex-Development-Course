@@ -1,0 +1,11 @@
+// Get all leads created on 15th June 2020
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead WHERE CreatedDate>2020-06-15T00:00:00.000+0000
+
+// Get all leads created today
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead WHERE CreatedDate=TODAY
+
+// Get all leads created after yesterday
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead WHERE CreatedDate>YESTERDAY
+
+// Get all leads created in last 10 days
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead WHERE CreatedDate=LAST_N_DAYS:10

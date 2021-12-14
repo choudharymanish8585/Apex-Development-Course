@@ -1,0 +1,5 @@
+// IN Operator
+SELECT Name, Status, LeadSource, Company, Email FROM Lead WHERE Status IN ('Closed - Converted', 'Closed - Not Converted') AND LeadSource='Web'
+
+// LIKE Operator
+SELECT Name, Status, LeadSource, Company, Email FROM Lead WHERE Status LIKE 'Closed%' AND LeadSource='Web'

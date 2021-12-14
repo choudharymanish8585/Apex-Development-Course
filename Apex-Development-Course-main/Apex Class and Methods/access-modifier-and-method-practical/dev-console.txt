@@ -1,0 +1,10 @@
+// initializes the class
+HelloWorld firstClass = new HelloWorld();
+
+// get an error for private variable
+//System.debug(firstClass.greeting);
+
+firstClass.printGreeting();
+
+// print public var's value
+System.debug(firstClass.publicGreeting);

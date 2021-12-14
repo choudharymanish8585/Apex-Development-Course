@@ -1,0 +1,5 @@
+// get sum of amount where sum is greater than 300k
+SELECT StageName, SUM(Amount) FROM Opportunity WHERE Amount>300000 GROUP BY StageName
+
+
+SELECT StageName, SUM(Amount) FROM Opportunity GROUP BY StageName HAVING SUM(Amount) >300000 

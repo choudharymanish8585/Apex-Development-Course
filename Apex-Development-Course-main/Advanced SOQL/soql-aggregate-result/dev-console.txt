@@ -1,0 +1,14 @@
+// Without Aliases / Using Expressions
+AggregateResult[] groupedResult = [SELECT StageName, MAX(Amount), MIN(Amount), AVG(Amount) FROM Opportunity GROUP BY StageName];
+
+for(AggregateResult result: groupedResult){
+    System.debug('StageName: '+result.get('StageName')+' Max Amount: '+result.get('expr0')+' Min Amount: '+result.get('expr1')+' Avg Amount: '+result.get('expr2'));
+}
+
+
+// Using Aliases
+AggregateResult[] groupedResult = [SELECT StageName, MAX(Amount) maxAmount, MIN(Amount) minAmount, AVG(Amount) avgAmount FROM Opportunity GROUP BY StageName];
+
+for(AggregateResult result: groupedResult){
+    System.debug('StageName: '+result.get('StageName')+' Max Amount: '+result.get('maxAmount')+' Min Amount: '+result.get('minAmount')+' Avg Amount: '+result.get('avgAmount'));
+}

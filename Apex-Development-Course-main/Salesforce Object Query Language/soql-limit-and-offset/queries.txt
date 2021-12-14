@@ -1,0 +1,17 @@
+// Limit 10 rows
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead LIMIT 10
+
+// Limit with Order By clause
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead Order By Name LIMIT 10
+
+// Limit with Order By and Where clause
+SELECT Name, Status, Company, Email FROM Lead WHERE Status='Closed - Converted' ORDER BY Name LIMIT 1
+
+// Get latest record
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead ORDER BY CreatedDate DESC LIMIT 1
+
+// OFFSET 5
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead OFFSET 5
+
+// Get latest 5 records and skip first 5
+SELECT Name, Status, LeadSource, Company, Email, CreatedDate FROM Lead ORDER BY CreatedDate DESC LIMIT 5 OFFSET 5

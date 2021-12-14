@@ -1,0 +1,30 @@
+Set<Integer> rollNumbers = new Set<Integer>{11008890, 11008100, 11007231};
+System.debug(rollNumbers);
+
+rollNumbers.add(89897767);
+rollNumbers.add(89897764);
+rollNumbers.add(89897765);
+
+System.debug(rollNumbers);
+
+// adding duplicate values - NOT ALLOWED
+rollNumbers.add(89897767);
+System.debug(rollNumbers);
+
+// check if set has an item
+System.debug(rollNumbers.contains(89897764));
+System.debug(rollNumbers.contains(345345));
+
+// delete an item
+rollNumbers.remove(89897765);
+System.debug(rollNumbers);
+
+// get set size
+System.debug(rollNumbers.size());
+
+// check if set is empty
+System.debug(rollNumbers.isEmpty());
+
+// remove all items
+rollNumbers.clear();
+System.debug(rollNumbers.isEmpty());

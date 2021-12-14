@@ -1,0 +1,8 @@
+// Get account information from contact
+SELECT Name, Phone, Department, Account.Name, Account.Website FROM Contact
+
+// get grandparent (user) object details
+SELECT Name, Phone, Department, Account.Name, Account.Website, Account.Owner.Name FROM Contact
+
+// Get author(parent object) from books(child object)
+SELECT Name, Price__c, Author__r.Name FROM Book__c

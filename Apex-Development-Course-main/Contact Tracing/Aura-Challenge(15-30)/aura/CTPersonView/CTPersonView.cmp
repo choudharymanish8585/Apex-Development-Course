@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-10-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   06-10-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<aura:component controller="CTPersonViewController">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="fields" type="String[]" default="['Name','Mobile__c','Token__c','Health_Status__c','Status_Update_Date__c']" />
+    <aura:handler event="c:CTPersonSelectEvent" action="{!c.personSelectHandler}" />
+
+    <aura:if isTrue="{! !empty(v.recordId)}">
+        <div class="{!v.status + ' person-card'}">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:recordForm recordId="{!v.recordId}" objectApiName="Person__c" fields="{!v.fields}" columns="1" mode="readonly" />
+                </lightning:layoutItem>
+                <aura:if isTrue="{!v.status != 'Red'}">
+                    <lightning:layoutItem size="12" padding="around-small">
+                        <lightning:button label="Update Status to Red" variant="destructive" title="Update Status to Red" onclick="{!c.updateStatus}" />
+                    </lightning:layoutItem>
+                </aura:if>
+            </lightning:layout>
+        </div>
+    </aura:if>
+</aura:component>

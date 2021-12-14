@@ -1,0 +1,22 @@
+// Inserting one single account
+Account acc = new Account(Name='CLR Infotech', Phone='9988998899');
+acc.Rating = 'Hot';
+insert acc;
+
+
+List<Account> accounts = new List<Account>();
+Account acc1 = new Account(Name='Test Account 1');
+Account acc2 = new Account(Name='Test Account 2');
+Account acc3 = new Account(Name='Test Account 3');
+Account acc4 = new Account(Name='Test Account 4');
+Account acc5 = new Account(Name='Test Account 5');
+accounts.add(acc1);
+accounts.add(acc2);
+accounts.add(acc3);
+accounts.add(acc4);
+accounts.add(acc5);
+// Inserting a list of account
+insert accounts;
+
+// Alternate way to insert the accounts
+Database.insert(accounts, false);
