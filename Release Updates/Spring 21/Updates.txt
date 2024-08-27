@@ -1,0 +1,1 @@
+Flag Invocable Apex Methods That Make Callouts - https://help.salesforce.com/s/articleView?id=release-notes.rn_apex_flow_flag_invocable_methods_callouts.htm&release=230&type=5
