@@ -1,0 +1,1 @@
+QuiddityExample.logMessage('Test logs');
