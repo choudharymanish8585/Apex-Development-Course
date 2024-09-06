@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalServiceRegistration xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>SFDCFacts Academy Courses aPI</description>
+    <label>SFDCFactsAcademyCourses</label>
+    <namedCredentialReference>SFDCFactsAcademy</namedCredentialReference>
+    <operations>
+        <active>true</active>
+        <name>deletecoursesbycourseid</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>getcourses</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>getcoursesbycourseid</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>postcourses</name>
+    </operations>
+    <operations>
+        <active>true</active>
+        <name>putcoursesbycourseid</name>
+    </operations>
+    <registrationProviderType>Custom</registrationProviderType>
+    <schema>openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  # Added by API Auto Mocking Plugin
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: &apos;https://virtserver.swaggerhub.com/CHOUDHARYMANISH8585/SFDCFacts-Courses/1.0.0&apos;
+info:
+  title: Course Management API
+  description: &apos;This API allows you to manage SFDCFacts Academy courses, instructors, students, and enrollments in an online learning platform.&apos;
+  version: 1.0.0
+security:
+  - accessCode:
+      - read
+      - write
+paths:
+  /courses:
+    get:
+      summary: Get all courses
+      description: Retrieve a list of all courses
+      responses:
+        &apos;200&apos;:
+          description: A list of courses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: &apos;#/components/schemas/Course&apos;
+        &apos;500&apos;:
+          description: Internal server error
+    post:
+      summary: Create a new course
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: &apos;#/components/schemas/Course&apos;
+      responses:
+        &apos;201&apos;:
+          description: Course created
+        &apos;400&apos;:
+          description: Bad request
+        &apos;500&apos;:
+          description: Internal server error
+  &apos;/courses/{courseId}&apos;:
+    get:
+      summary: Get a course by ID
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        &apos;200&apos;:
+          description: Course details
+          content:
+            application/json:
+              schema:
+                $ref: &apos;#/components/schemas/Course&apos;
+        &apos;404&apos;:
+          description: Course not found
+        &apos;500&apos;:
+          description: Internal server error
+    put:
+      summary: Update a course
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: &apos;#/components/schemas/Course&apos;
+      responses:
+        &apos;200&apos;:
+          description: Course updated
+        &apos;400&apos;:
+          description: Bad request
+        &apos;404&apos;:
+          description: Course not found
+        &apos;500&apos;:
+          description: Internal server error
+    delete:
+      summary: Delete a course
+      parameters:
+        - name: courseId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        &apos;204&apos;:
+          description: Course deleted
+        &apos;404&apos;:
+          description: Course not found
+        &apos;500&apos;:
+          description: Internal server error
+components:
+  schemas:
+    Course:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        instructorId:
+          type: string
+        category:
+          type: string
+        duration:
+          type: number
+      required:
+        - title
+        - description
+        - instructorId
+        - duration
+    Instructor:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        bio:
+          type: string
+      required:
+        - name
+        - bio
+    Student:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+      required:
+        - name
+        - email
+  securitySchemes:
+    accessCode:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: &apos;https://oauth2.googleapis.com/token&apos;
+          refreshUrl: &apos;&apos;
+          scopes:
+            read: &quot;Read access to protected resources&quot;
+            write: &quot;Write access to protected resources&quot;
+x-internal: false</schema>
+    <schemaType>OpenApi3</schemaType>
+    <serviceBinding>{&quot;host&quot;:&quot;virtserver.swaggerhub.com&quot;,&quot;basePath&quot;:&quot;/CHOUDHARYMANISH8585/SFDCFacts-Courses/1.0.0&quot;,&quot;allowedSchemes&quot;:[&quot;HTTPS&quot;],&quot;requestMediaTypes&quot;:[],&quot;responseMediaTypes&quot;:[],&quot;compatibleMediaTypes&quot;:{}}</serviceBinding>
+    <status>Complete</status>
+    <systemVersion>5</systemVersion>
+</ExternalServiceRegistration>
