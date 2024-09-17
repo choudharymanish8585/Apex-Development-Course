@@ -1,0 +1,23 @@
+Integer i = 0;
+
+do {
+    // check if i is divisible by both 3 and 5
+    if(Math.mod(i, 3) == 0 && Math.mod(i, 5) == 0){
+        System.debug('fizzbuzz');
+    }
+    //check if i is divisible by 3
+    if(Math.mod(i, 3) == 0){
+        System.debug('fizz');
+    }
+    //check if i is divisible by 5
+    else if(Math.mod(i, 5) == 0){
+        System.debug('buzz');
+    }
+    // if none of above is true, then print i as is
+    else {
+        System.debug(i);
+    }
+
+    // increment i's value
+    i++;
+} while ( i<=100);//i's value is less than or equal to 100

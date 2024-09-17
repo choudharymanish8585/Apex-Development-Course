@@ -1,0 +1,10 @@
+//List of all days
+List<String> days = new List<String>{'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'};
+
+// list iteration for loop to iterate over days
+for(String day : days){
+    if(day == 'Tuesday'){
+        continue;
+    }
+    System.debug('It is '+day+'. Eat Chicken');
+}

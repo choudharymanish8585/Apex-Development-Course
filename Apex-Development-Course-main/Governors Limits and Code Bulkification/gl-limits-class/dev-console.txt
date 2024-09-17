@@ -1,0 +1,17 @@
+// big soql query
+List<Account> accounts = [SELECT Id, Type, Name, ParentId, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry, BillingLongitude, BillingLatitude, BillingGeocodeAccuracy, BillingAddress, ShippingStreet, ShippingCity, ShippingState, ShippingPostalCode, ShippingCountry, ShippingLatitude, ShippingLongitude, ShippingGeocodeAccuracy, ShippingAddress, Phone, Fax, AccountNumber, Website, PhotoUrl, Sic, Industry, AnnualRevenue, NumberOfEmployees, Ownership, TickerSymbol, Description, Rating, Site, AccountSource, DunsNumber, Tradestyle, NaicsCode, NaicsDesc, YearStarted, SicDesc, DandbCompanyId, OperatingHoursId, CustomerPriority__c, SLA__c, Active__c, NumberofLocations__c, UpsellOpportunity__c, SLASerialNumber__c, SLAExpirationDate__c FROM Account];
+
+// endless while loop
+// This loop will hit heap size issue in apex
+// as it doubles the accounts list each time
+while(1==1){
+    // check if half of the heap is already utilized
+    if(Limits.getHeapSize()*2 >= Limits.getLimitHeapSize()){
+        break;
+    }
+     // make copy of accounts list
+	 List<Account> dupAccounts = accounts;
+     // add copy to original list
+     accounts.addAll(dupAccounts);
+}
+System.debug('List size: '+accounts.size());

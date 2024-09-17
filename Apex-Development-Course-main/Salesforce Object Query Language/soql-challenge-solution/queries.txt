@@ -1,0 +1,20 @@
+// Step 1: Write a SOQL query to retrieve all Contacts from a Salesforce Org. Retrieved results should show Contact Name, Title, Phone and Email.
+SELECT Name, Title, Phone, Email FROM Contact
+
+// Step 2: Modify SOQL query to retrieve only those contacts with title ‘VP, Technology’.
+SELECT Name, Title, Phone, Email FROM Contact WHERE Title='VP, Technology'
+
+// Step 3: Modify SOQL, and add another field called ‘Department’ in the results. This field should be the 2nd field in the result.
+SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title='VP, Technology'
+
+// Step 4: Modify SOQL, retrieve all results satisfying step 2 condition and has department value as ‘Finance’
+SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title='VP, Technology' AND Department='Finance'
+
+// Step 5: Modify SOQL, include all SVP and VP in your search results. Make sure your result still meets step 4 condition.
+SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title LIKE '%VP%' AND Department='Finance'
+
+// Step 6: Sort results by name in descending order.
+SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title LIKE '%VP%' AND Department='Finance' ORDER BY Name DESC
+
+// Step 7: Limit search result to only 3.
+SELECT Name, Department, Title, Phone, Email FROM Contact WHERE Title LIKE '%VP%' AND Department='Finance' ORDER BY Name DESC LIMIT 3

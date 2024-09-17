@@ -1,0 +1,10 @@
+System.debug('BMI for height '+1.2+' meter and weight '+65+'kg is : '+Fitness.calculateBMI(65, 1.2));
+System.debug('BMI for height '+1.3+' meter and weight '+75+'kg is : '+Fitness.calculateBMI(75, 1.3));
+System.debug('BMI for height '+1.4+' meter and weight '+87+'kg is : '+Fitness.calculateBMI(87, 1.4));
+System.debug('BMI for height '+1.5+' meter and weight '+92+'kg is : '+Fitness.calculateBMI(92, 1.5));
+
+
+System.debug('Pace (km/hr) for '+12.5+' km in '+80+' minutes is '+Fitness.calculatePace(12.5, 80));
+System.debug('Pace (km/hr) for '+14.2+' km in '+72.3+' minutes is '+Fitness.calculatePace(14.2, 72.3));
+System.debug('Pace (km/hr) for '+12.9+' km in '+60.5+' minutes is '+Fitness.calculatePace(12.9, 60.5));
+System.debug('Pace (km/hr) for '+10.1+' km in '+70.1+' minutes is '+Fitness.calculatePace(10.1, 70.1));

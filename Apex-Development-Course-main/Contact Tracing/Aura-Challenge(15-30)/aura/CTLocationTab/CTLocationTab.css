@@ -1,0 +1,69 @@
+.THIS.main-container {
+    margin: -12px;
+    height: 100%;
+    background: white;
+    position: fixed;
+    width: 100%;
+}
+
+.THIS .search-panel {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 2rem 1rem;
+    background: lightblue;
+}
+
+.THIS .card-container {
+    flex-direction: column;
+    border-radius: 2rem;
+    box-shadow: 0px -2px 16px cadetblue;
+    width: 560px;
+    margin-top: -2rem;
+    padding-bottom: 2rem;
+}
+
+.THIS .health-header {
+    font-size: medium;
+    font-weight: 600;
+    padding: 16px 12px;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.THIS .header-panel {
+    background-color: #dddbda;
+    width: 560px;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.THIS .Red {
+    background: red;
+}
+
+.THIS .Green {
+    background: green;
+}
+
+.THIS .Yellow {
+    background: #baba00;
+}
+
+.THIS .Orange {
+    background: orange;
+}
+
+.THIS .subheader-row {
+    background: #f3f2f2;
+    display: flex;
+    padding: 8px 4px;
+}
+
+.THIS .row-item {
+    flex: 1 1 auto;
+    margin: 0px 8px;
+}
+
+.THIS .body {
+    margin-top: 1rem;
+    width: 560px;
+    padding: 0.5rem;
+}
